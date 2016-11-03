@@ -32,3 +32,30 @@ cacheSolve <- function(x, ...) {
         x$setinverse (minv)
         minv
 }
+                
+## Testing the Code:
+ mat = diag(3,5)
+> mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    3    0    0    0    0
+[2,]    0    3    0    0    0
+[3,]    0    0    3    0    0
+[4,]    0    0    0    3    0
+[5,]    0    0    0    0    3
+> my_mat <- makeCacheMatrix(mat)
+> my_mat$get()
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    3    0    0    0    0
+[2,]    0    3    0    0    0
+[3,]    0    0    3    0    0
+[4,]    0    0    0    3    0
+[5,]    0    0    0    0    3
+## First time it shows that there is no Cache
+ my_mat$getinverse()
+NULL
+## When solve for the inverse next time using cacheSolve:
+> cacheSolve(my_mat)
+          [,1]      [,2]      [,3]      [,4]      [,5]
+[1,] 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000
+[2,] 0.0000000 0.3333333 0.0000000 0.0000000 0.0000000
+[3,] 0.0000000 0.0000000 0.3333333 0.0000000 
