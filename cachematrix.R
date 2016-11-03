@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## The makeCacheMatrix function creates a spaecial matrix than can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
         minv <- NULL
@@ -18,7 +18,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve function solves for the inverse of the matrix if the information is already NOT available
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
